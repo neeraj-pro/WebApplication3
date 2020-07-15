@@ -1,0 +1,7 @@
+FROM registry.redhat.io/dotnet/dotnet-31-rhel7 AS base
+ARG source
+WORKDIR /app
+ENV ASPNETCORE_URLS http://*:80
+EXPOSE 80
+COPY . .
+ENTRYPOINT ["dotnet", "WebApplication3.dll"]
